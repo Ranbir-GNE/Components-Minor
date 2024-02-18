@@ -1,0 +1,58 @@
+/* Styles for the login page container */
+.login-page {
+    width: 400px;
+    margin: 0 auto;
+}
+
+/* CSS for screens less than 600px wide */
+@media (max-width: 600px) {
+    .login-page {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.sidebar {
+    width: 200px; /* Adjust as needed */
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: Transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* Styles for the sidebar list */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Styles for the sidebar list items */
+.sidebar li {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Styles for the sidebar links */
+.sidebar a {
+    color: #fff; /* Adjust as needed */
+    text-decoration: none;
+}
+
+/* Styles for the sidebar links on hover */
+.sidebar a:hover {
+    color:  rgba(0, 255, 115, 0.9); /* Adjust as needed */
+    /* Remove this line */
+    /* padding:none; */
+    text-decoration: none;
+    display: block;
+    /* Set a transparent background */
+    background: transparent;
+    transition: color 0.5s;
+  }
+
+/* Styles for the input box */

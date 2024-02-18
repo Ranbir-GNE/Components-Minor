@@ -1,6 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import './RegisterForm.css'
 import { FaUserAlt, FaLock, FaEnvelope, FaMobile, FaCalendar, FaAt } from "react-icons/fa"
 
