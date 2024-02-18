@@ -12,8 +12,13 @@
     }
 }
 
+.dashboard {
+    display: flexbox;
+    flex-flow: row;
+}
 .sidebar {
-    width: 200px; /* Adjust as needed */
+    width: 15%; /* Adjust as needed */
+    min-width: 200px;
     height: 100vh;
     position: fixed;
     left: 0;
@@ -45,14 +50,25 @@
 
 /* Styles for the sidebar links on hover */
 .sidebar a:hover {
-    color:  rgba(0, 255, 115, 0.9); /* Adjust as needed */
-    /* Remove this line */
-    /* padding:none; */
+    color:  rgba(0, 255, 115, 0.9);
     text-decoration: none;
     display: block;
-    /* Set a transparent background */
     background: transparent;
     transition: color 0.5s;
   }
+
+  .container1 {
+    left:205px;
+    display: flexbox;
+    flex-flow: row ;
+    min-height: 400px;
+    text-align: center;
+    background: Transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 25px;
+}
 
 /* Styles for the input box */
