@@ -19,7 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height:100vh;
-  background:url('https://i.redd.it/bpxxqqvps4h91.gif') no-repeat;
+  background:url('./Components/Assets/background.gif') no-repeat;
   background-size:auto !important;
   background-position: center;
 }
