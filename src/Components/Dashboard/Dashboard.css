@@ -1,97 +1,91 @@
-body {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.parent {
-  display: flex;
-}
-
-.flexbox1 {
-  flex: 0 0 20%;
-}
-
-.flexbox2 {
-  flex: 1;
-}
-
-.sidebar {
-  background-color: #333;
-  height: 100vh;
-}
-
-.navbar {
-  list-style: none;
-  padding: 0;
-  display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);
-  color: #fff;
-  border-radius: 10px;
-  padding: 15px 25px;
-}
-
-.navbar li {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  font-weight: 600;
-}
-
-.navbar li a {
-  color: #fff;
-  text-decoration: none;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out; /* Add transition */
-}
-.navbar li a:hover {
-  color: rgba(0, 255, 115, 0.9);
-}
-
-.burger-menu {
-  display: none;
-}
-
-.burger-menu .line {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 5px;
-}
-
-@media screen and (max-width: 768px) {
-  .burger-menu {
+.login-page {
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 600px) {
+    .login-page {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  .dashboard,
+  .container1 {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 15%;
+    min-width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: Transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    padding: 20px;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 600;
+    display: none;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    color: rgba(0, 255, 115, 0.9);
+    text-decoration: none;
     display: block;
-    cursor: pointer;
+    background: transparent;
+    transition: color 0.5s;
   }
-
+  
+  .container1 {
+    left: 205px;
+    min-height: 400px;
+    text-align: center;
+    background: Transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 25px;
+  }
+  
   .navbar {
-    display: none;
+    display: block;
   }
-
-  .navbar.active {
-    display: flex;
-    flex-direction: column;
+  
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+  
+    .sidebar {
+      display: block;
+    }
   }
-}
-
-@media screen and (min-width: 1080px) {
-  .burger-menu {
-    display: none;
+  
+  @media (max-width: 400px) {
+    .sidebar {
+      width: 100%;
+    }
+  
+    .burger-menu {
+      display: block;
+    }
   }
-
-  .navbar {
-    display: flex;
-  }
-}

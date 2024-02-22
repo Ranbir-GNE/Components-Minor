@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
 
+function Sidebar() {
+  const [show, setShow] = useState(false);
 
-function Navbar() {
+  const handleBurgerClick = () => {
+    setShow(!show);
+  };
+
   return (
-    <nav className="navbar">
+    <div>
+      <button className="burger-menu" onClick={handleBurgerClick}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      <aside className={`sidebar ${show ? 'show' : ''}`}>
       <ul>
       <li><Link to="/dashboard">Dashboard</Link></li>
             <li><Link to="/admin">Admin</Link></li>
@@ -21,8 +31,9 @@ function Navbar() {
             <li><Link to="/logout">Logout</Link></li>
         {/* Add more links as needed */}
       </ul>
-    </nav>
+    </aside>
+    </div>
   );
 }
 
-export default Navbar;
+export default Sidebar;
