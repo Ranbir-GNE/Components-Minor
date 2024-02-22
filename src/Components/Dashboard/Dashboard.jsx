@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className='parent'>
       <div className="flexbox1">
         <div className="sidebar">
-          <ul>
+          {/* Burger Menu */}
+          <div className="burger-menu" onClick={toggleMenu}>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+          {/* End Burger Menu */}
+          {/* Navbar */}
+          <ul className={`navbar ${showMenu ? 'active' : ''}`}>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li><Link to="/admin">Admin</Link></li>
             <li><Link to="/student">Student</Link></li>
@@ -21,6 +35,7 @@ const Dashboard = () => {
             <li><Link to="/change-password">Change Password</Link></li>
             <li><Link to="/logout">Logout</Link></li>
           </ul>
+          {/* End Navbar */}
         </div>
       </div>
       <div className="flexbox2">

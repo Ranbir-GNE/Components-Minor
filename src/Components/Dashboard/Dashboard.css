@@ -1,74 +1,97 @@
-/* Styles for the login page container */
-.login-page {
-    width: 400px;
-    margin: 0 auto;
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-/* CSS for screens less than 600px wide */
-@media (max-width: 600px) {
-    .login-page {
-        width: 100%;
-        padding: 10px;
-    }
+.parent {
+  display: flex;
 }
 
-.dashboard {
-    display: flexbox;
-    flex-flow: row;
+.flexbox1 {
+  flex: 0 0 20%;
 }
+
+.flexbox2 {
+  flex: 1;
+}
+
 .sidebar {
-    width: 15%; /* Adjust as needed */
-    min-width: 200px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: Transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(50px);
-    padding: 20px;
-    overflow: auto;
-    font-size: 16px;
-    font-weight: 600;
-}
-/* Styles for the sidebar list */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
+  background-color: #333;
+  height: 100vh;
 }
 
-/* Styles for the sidebar list items */
-.sidebar li {
-    margin-bottom: 20px; /* Adjust as needed */
+.navbar {
+  list-style: none;
+  padding: 0;
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
 }
 
-/* Styles for the sidebar links */
-.sidebar a {
-    color: #fff; /* Adjust as needed */
-    text-decoration: none;
+.navbar li {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
 }
 
-/* Styles for the sidebar links on hover */
-.sidebar a:hover {
-    color:  rgba(0, 255, 115, 0.9);
-    text-decoration: none;
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out; /* Add transition */
+}
+.navbar li a:hover {
+  color: rgba(0, 255, 115, 0.9);
+}
+
+.burger-menu {
+  display: none;
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .burger-menu {
     display: block;
-    background: transparent;
-    transition: color 0.5s;
+    cursor: pointer;
   }
 
-  .container1 {
-    left:205px;
-    display: flexbox;
-    flex-flow: row ;
-    min-height: 400px;
-    text-align: center;
-    background: Transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(50px);
-    color: #fff;
-    border-radius: 10px;
-    padding: 15px 25px;
+  .navbar {
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-/* Styles for the input box */
+@media screen and (min-width: 1080px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+  }
+}

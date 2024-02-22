@@ -1,3 +1,11 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
 /* Styles for the login page container */
 .login-page {
     width: 400px;
