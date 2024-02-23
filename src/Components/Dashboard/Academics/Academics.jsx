@@ -1,9 +1,9 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom'
+// import { useNavigate} from 'react-router-dom'
 import './Academics.css';
 
 const Academics = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     return (
         <div className="student-wrapper">
             <div className="student-details">

@@ -21,7 +21,7 @@ const LoginForm = () => {
 
             <div className="remember-forgot">
                 <label><input type="checkbox"/>Remember me</label>
-                <a href="#">Forgot Password</a> 
+                {/* <a href="#">Forgot Password</a>  */}
             </div>
 
             <button type="submit" onClick={() => navigate('/dashboard')}>Login</button>            
