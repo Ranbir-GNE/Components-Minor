@@ -1,7 +1,9 @@
 /* Navbar.css */
 .navbar {
     display: flex;
-    justify-content: space-around; /* Distribute items evenly */
+    overflow-x: ellipsis;
+    white-space: nowrap;
+    justify-content: space-between; /* Distribute items evenly */
     align-items: center; /* Vertically center the content */
     padding: 20px;
     background: transparent;
@@ -19,9 +21,8 @@
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* Distribute items evenly */
+    justify-content:space-between; /* Distribute items evenly */
     width: 100%; /* Take up full width of the navbar */
-    margin: 0; /* Remove default margin */
 }
 
 .navbar li {
@@ -37,3 +38,13 @@
     color: rgba(0, 255, 115, 0.9);
     transition: color 0.5s;
 }
+.navbar button{
+    background: transparent;
+    border:#fff;
+    border-radius: 5px;
+    outline:auto;
+    cursor: pointer;
+    font-size: 18px;
+    color:#fff;
+}
+    

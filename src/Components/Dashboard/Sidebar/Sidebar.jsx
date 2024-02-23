@@ -1,21 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Sidebar() {
-  const [show, setShow] = useState(false);
-
-  const handleBurgerClick = () => {
-    setShow(!show);
-  };
-
   return (
-    <div>
-      <button className="burger-menu" onClick={handleBurgerClick}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
-      <aside className={`sidebar ${show ? 'show' : ''}`}>
+    <div className='sidebar'>
       <ul>
       <li><Link to="/dashboard">Dashboard</Link></li>
             <li><Link to="/admin">Admin</Link></li>
@@ -29,11 +17,8 @@ function Sidebar() {
             <li><Link to="/settings">Settings</Link></li>
             <li><Link to="/change-password">Change Password</Link></li>
             <li><Link to="/logout">Logout</Link></li>
-        {/* Add more links as needed */}
       </ul>
-    </aside>
     </div>
   );
 }
-
 export default Sidebar;

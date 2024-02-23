@@ -1,91 +1,59 @@
-.login-page {
-    width: 400px;
-    margin: 0 auto;
-  }
-  
-  @media (max-width: 600px) {
-    .login-page {
-      width: 100%;
-      padding: 10px;
-    }
-  }
-  
-  .dashboard,
-  .container1 {
-    display: flex;
-  }
-  
-  .sidebar {
-    width: 15%;
-    min-width: 200px;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: Transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(50px);
-    padding: 20px;
-    overflow: auto;
-    font-size: 16px;
-    font-weight: 600;
-    display: none;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 20px;
-  }
-  
-  .sidebar a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .sidebar a:hover {
-    color: rgba(0, 255, 115, 0.9);
-    text-decoration: none;
-    display: block;
-    background: transparent;
-    transition: color 0.5s;
-  }
-  
-  .container1 {
-    left: 205px;
-    min-height: 400px;
-    text-align: center;
-    background: Transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(50px);
-    color: #fff;
-    border-radius: 10px;
-    padding: 15px 25px;
-  }
-  
-  .navbar {
-    display: block;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar {
-      display: none;
-    }
-  
-    .sidebar {
-      display: block;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .sidebar {
-      width: 100%;
-    }
-  
-    .burger-menu {
-      display: block;
-    }
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header,
+.footer {
+  background: Transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+}
+
+.content{
+  width: 400px;
+  max-height: 70vh;
+  background: Transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-top: 150px;
+}
+.notice{
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);  padding: 1rem;
+  position: fixed;
+  left: 0;
+  width: 200px;
+  margin-top: 150px;
+}
+.stuff {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);  padding: 1rem;
+  position: fixed;
+  right: 0;
+  width: 200px;
+  margin-top: 150px;
+}
+.notice,
+.content,
+.stuff {
+  padding: 1rem;
+  text-align: center;
+}
