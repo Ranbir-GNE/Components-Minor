@@ -14,7 +14,7 @@ function Navbar() {
             <li><Link to="/fees">Fees Collection</Link></li>
             <li><Link to="/examinations">Examinations</Link></li>
             <li><Link to="/attendance">Attendance</Link></li>
-            <button><Link to="https://curacare.vercel.app/">Communicate</Link></button>
+            <button><a href="https://curacare.vercel.app/" target="_blank" rel="noopener noreferrer">Communicate</a></button>
             <li><Link to="/my-account">My Account</Link></li>
             <li><Link to="/settings">Settings</Link></li>
             <li><Link to="/change-password">Change Password</Link></li>
