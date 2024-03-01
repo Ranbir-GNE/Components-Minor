@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import './RegisterForm.css'
+import { FaUserAlt, FaLock, FaEnvelope, FaMobile, FaCalendar, FaAt } from "react-icons/fa"
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -56,22 +58,47 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className='wrapper'>
+      <h2>Registeration</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="username" value={username} onChange={handleChange} placeholder="Username" required />
-        <input type="email" name="email" value={email} onChange={handleChange} placeholder="Email" required />
-        <input type="password" name="password" value={password} onChange={handleChange} placeholder="Password" minLength="8" required />
-        <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleChange} placeholder="Confirm Password" minLength="8" required />
-        <input type="date" name="dateOfBirth" value={dateOfBirth} onChange={handleChange} required />
-        <select name="role" value={role} onChange={handleChange} required>
-          <option value="student">Student</option>
-          <option value="faculty">Faculty</option>
-          <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Register</button>
+      <div className="input-box">
+                  <input type="text" placeholder='Name' required/>
+                  <FaUserAlt className='icon'/>
+              </div>
+              <div className="input-box">
+                  <input type="email" placeholder='Email Address' required />
+                  <FaEnvelope className='icon'/>
+              </div>
+              <div className="input-box">
+                  <input type="tel" placeholder='Mobile Number'required maxLength={10}/>
+                  <FaMobile className='icon'/>
+              </div>
+              <div className="input-box">
+                  <input type="text" placeholder='Username' required minLength={8}/>
+                  <FaAt className='icon'/>
+              </div>
+              <div className="input-box">
+                  <input type="password" placeholder='Password' required minLength={12}/>
+                  <FaLock className='icon'/>
+              </div>
+              <div className="input-box">
+                  <input type="date" required/>
+                  <FaCalendar className='icon'/>
+              </div>
+        <div className='select-box'>
+          <select name="role" value={role} onChange={handleChange} required>
+          <option value="">Select Role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="admin">Admin</option>
+          </select>
+          <button type="submit">Register</button>
+        </div>
+        
       </form>
-      <p>Already have an account? <Link to="/login">Login</Link></p>
+      <div className='register-link'>
+        <p>Already have an account? <Link to="/login">Login</Link></p>
+      </div>
     </div>
   );
 };

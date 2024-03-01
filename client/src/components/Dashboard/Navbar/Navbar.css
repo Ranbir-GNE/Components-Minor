@@ -1,0 +1,50 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    overflow-x: ellipsis;
+    white-space: nowrap;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Vertically center the content */
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content:space-between; /* Distribute items evenly */
+    width: 100%; /* Take up full width of the navbar */
+}
+
+.navbar li {
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgba(0, 255, 115, 0.9);
+    transition: color 0.5s;
+}
+.navbar button{
+    background: transparent;
+    border:#fff;
+    border-radius: 5px;
+    outline:auto;
+    cursor: pointer;
+    font-size: 18px;
+    color:#fff;
+}
+    

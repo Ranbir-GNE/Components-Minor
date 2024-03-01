@@ -1,0 +1,74 @@
+/* Styles for the wrapper container */
+.wrapper {
+    width: 400px;
+    min-height: max-content;
+    margin: 20px ;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    
+}
+
+/* Styles for the wrapper heading */
+.wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for the input box container */
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for the input box */
+.input-box input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Styles for the select box */
+.select-box {
+    margin-top: 20px;
+}
+
+/* Styles for the select box select */
+.select-box select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Styles for the button */
+.select-box button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Styles for the button on hover */
+.select-box button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the register-link */
+.register-link {
+    text-align: center;
+}
+
+/* Styles for the register-link link */
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Styles for the register-link link on hover */
+.register-link a:hover {
+    text-decoration: underline;
+}

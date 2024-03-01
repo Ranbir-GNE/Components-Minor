@@ -1,0 +1,14 @@
+.register-link {
+    text-align: center;
+}
+
+/* Styles for the register-link link */
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Styles for the register-link link on hover */
+.register-link a:hover {
+    text-decoration: underline;
+}
