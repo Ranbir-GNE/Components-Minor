@@ -1,10 +1,13 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom'
+import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../Navbar/Navbar';
 import './Student.css';
 
 const Student = () => {
-    const navigate = useNavigate()
     return (
+      <div>
+        <Navbar/>
+        <Sidebar/>
       <div className="student-wrapper">
       <div className="profile-picture">
         {/* Add student profile picture here */}
@@ -21,6 +24,7 @@ const Student = () => {
         <p>Address: 123 Main Street, City, State</p>
         <p>Father's Name: Michael</p>
         <p>Mobile Number: 9876543210</p>
+      </div>
       </div>
     </div>
   );

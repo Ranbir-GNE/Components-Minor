@@ -1,38 +1,38 @@
 import React from 'react';
-import './Dashboard.css';
-import Navbar from './Navbar.jsx';
-import Sidebar from './Sidebar.jsx';
+import { useLocation } from 'react-router-dom';
+import Navbar from './Navbar/Navbar.jsx';
+import Sidebar from './Sidebar/Sidebar.jsx';
 
-function Dashboard() {
+const Dashboard = () => {
+  const location = useLocation();
+  const { email } = location.state || {}; // Retrieve email from location state
+
   return (
-    <div className="container">
-      <div className="header">
-        <h1>College Name</h1>
-      </div>
-      <div className="main">
-        <div className="notice">
-          <h2>Notices</h2>
-          <p>Notice 1</p>
-          <p>Notice 2</p>
-          <p>Notice 3</p>
+    <div>
+      <div>
+        <div className="wrapper">
+          <div>
+            <h1>About Us</h1>
+            <p>Welcome to our college. We are a prestigious institution offering a variety of courses for our students.</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide quality education and foster the growth of our students.</p>
+            <h2>Our Vision</h2>
+            <p>Our vision is to be a leading educational institution, recognized for the excellence of its students and faculty.</p>
+            <h2>Contact Us</h2>
+            <p>Address: 123 College Street, City, State, Country</p>
+            <p>Email: info@college.edu</p>
+            <p>Phone: 123-456-7890</p>
+          </div>
+          {email && (
+            <div>
+              <h2>Welcome, {email}!</h2> {/* Display the user's email */}
+            </div>
+          )}
         </div>
-        <div className="content">
-          <p>Hello GUys</p>
-        </div>
-        <div className="stuff">
-          <h2>Stuff</h2>
-          <p>Stuff 1</p>
-          <p>Stuff 2</p>
-          <p>Stuff 3</p>
-        </div>
+          <Navbar />
+          <Sidebar/> 
       </div>
-      <div className="footer">
-        {/* Add footer content here */}
-      </div>
-      <Navbar />
-      <Sidebar/>
     </div>
   );
-}
-
+};
 export default Dashboard;

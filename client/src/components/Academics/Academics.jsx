@@ -1,10 +1,15 @@
 import React from 'react';
 import { useNavigate} from 'react-router-dom'
 import './Academics.css';
+import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../Navbar/Navbar';
 
 const Academics = () => {
     const navigate = useNavigate()
     return (
+        <div>
+            <Navbar/>
+            <Sidebar/>
         <div className="student-wrapper">
             <div className="student-details">
                 <h2>Academic Details</h2>
@@ -20,6 +25,7 @@ const Academics = () => {
                 <p>Milestones Reached: {/* Add milestones reached here */}</p>
                 <p>Attendance %: {/* Add attendance percentage here */}</p>
             </div>
+        </div>
         </div>
     );
 };

@@ -26,7 +26,7 @@ function Navbar() {
           <li>Fees Collection</li>
         </Link>
 
-        <Link to="/examinations">
+        <Link to="/examination">
           <li>Examinations</li>
         </Link>
 

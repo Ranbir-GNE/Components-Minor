@@ -1,10 +1,15 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './ExamForm.css';
+import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../Navbar/Navbar';
 
 const ExamForm = () => {
     const navigate = useNavigate()
     return (
+        <div>
+            <Navbar/>
+            <Sidebar/>
         <div className='wrapper'>
             <form action="">
                 <h1>Exam Form</h1>
@@ -50,6 +55,7 @@ const ExamForm = () => {
             </form>
 
             <button type="submit" onClick={() => navigate('/print-admit-card')}>Print Admit Card</button>            
+            </div>
             </div>
     );
 };

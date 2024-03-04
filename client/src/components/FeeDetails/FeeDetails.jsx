@@ -1,10 +1,13 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom'
 import './FeeDetails.css';
+import Sidebar from '../Sidebar/Sidebar';
+import Navbar from '../Navbar/Navbar';
 
 const FeeDetails = () => {
-    const navigate = useNavigate()
     return (
+        <div>
+            <Navbar />
+            <Sidebar />
         <div className="fee-wrapper">
             <div className="student-details">
                 <h2>Student Details</h2>
@@ -25,6 +28,7 @@ const FeeDetails = () => {
                 <p>Eligible for Scholarship: Yes</p>
                 <p>Scholarships Availed: 2</p>
                 <p>Scholarship Amount: $2000</p>
+            </div>
             </div>
         </div>
     );

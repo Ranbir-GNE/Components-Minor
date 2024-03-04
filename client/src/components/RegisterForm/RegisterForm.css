@@ -31,30 +31,28 @@
 
 /* Styles for the select box */
 .select-box {
-    margin-top: 20px;
+    margin: 10px 0;
+    width: 100%;
 }
 
-/* Styles for the select box select */
+.select-box label {
+    margin-right: 20px; /* Adjust the value as needed */
+}
+
 .select-box select {
-    margin-bottom: 20px;
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid rgba(27, 2, 2, 0.2);
+    font-size: 14px;
+    color: #004a95;
+    background: transparent;
+    outline: none;
+    border-radius: 40px;
+    padding: 15px 40px 15px 15px;
 }
 
-/* Styles for the button */
-.select-box button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Styles for the button on hover */
-.select-box button:hover {
-    background-color: #0056b3;
+.select-box select:focus {
+    outline: none;
 }
 
 /* Styles for the register-link */
