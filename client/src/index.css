@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background: url('./assets/background.gif');
+  /* background: url('./assets/background.gif'); */
   background-color: black;
   display: flex;
   flex-direction: center;
