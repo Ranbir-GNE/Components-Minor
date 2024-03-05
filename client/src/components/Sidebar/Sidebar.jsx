@@ -6,16 +6,16 @@ function Sidebar() {
   return (
     <div className='sidebar'>
       <ul>
+        <Link to="/student">
+          <li>Student</li>
+        </Link>
+        
         <Link to="/dashboard">
           <li>Dashboard</li>
         </Link>
 
         <Link to="/admin">
           <li>Admin</li>
-        </Link>
-
-        <Link to="/student">
-          <li>Student</li>
         </Link>
 
         <Link to="/academics">

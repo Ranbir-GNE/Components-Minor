@@ -14,9 +14,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  /* background: url('./assets/background.gif'); */
   background-color: black;
+  /* background-color: black; */
   display: flex;
+  background-size: cover;
   flex-direction: center;
   justify-content: center;
   align-items: center;
@@ -26,3 +27,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
