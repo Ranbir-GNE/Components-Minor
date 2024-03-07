@@ -22,8 +22,12 @@ const Startpage = () => {
           <p>Email: info@college.edu</p>
           <p>Phone: 123-456-7890</p>
         </div>
+        <div className='register-link'></div>
         <Link to="/login">
           <button>Login</button>
+        </Link>
+        <Link to="/register">
+          <button>Register</button>
         </Link>
         </div>
 
