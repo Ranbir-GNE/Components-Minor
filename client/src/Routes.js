@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import RegisterForm from './components/RegisterForm/RegisterForm';
+import RegisterForm from './components/RegisterForm/RegisterForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Startpage from './components/startpage/startpage';
 import Navbar from './components/Navbar/Navbar';
@@ -34,11 +34,7 @@ const AppRoutes = () => {
         <Route path="/student" element={<Student />} />
         <Route path="/fees" element={<FeeDetails />} />
         <Route path="/examination" element={<ExamForm />} />
-
-
-
-
-
+        <Route path='/register' element={<RegisterForm />} />
       </Routes>
     </Router>
   );
