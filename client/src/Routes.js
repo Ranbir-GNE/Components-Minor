@@ -36,8 +36,7 @@ const AppRoutes = () => {
         <Route path="/fees" element={<FeeDetails />} />
         <Route path="/examination" element={<ExamForm />} />
         <Route path='/register' element={<RegisterForm />} />
-        <Route path='/attendance' element={<Attendance />} />
-      </Routes>
+        <Route path="/attendance" element={<Attendance />} />      </Routes>
     </Router>
   );
 };

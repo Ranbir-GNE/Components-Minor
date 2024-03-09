@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import { FaUserAlt, FaLock, FaEnvelope, FaCalendar, FaAt } from "react-icons/fa"
+import { FaLock, FaEnvelope, FaAt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 const Attendance = () => {
+    const navigate = useNavigate(); // Initialize useNavigate
+
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -18,14 +20,14 @@ const Attendance = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (totalClasses === 0) {
             console.error("Please enter correct classes ");
             return;
         }
-
+    
         try {
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch('http://localhost:5000/api/auth/attendance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,14 +39,14 @@ const Attendance = () => {
                     classesAttended,
                 }),
             });
-
+    
+            console.log(response);
             const data = await response.json();
-
+    
             if (response.ok) {
                 console.log("Attendance Uploaded Successfully", data);
-                console.log ("attendancePercentage", data);
-                // Redirect or handle successful registration
-                <Navigate to='/dashboard' replace={true} />
+                // Redirect after successful attendance submission
+                navigate('/success'); // Example route to redirect to
             } else {
                 console.error("Upload failed", data);
                 // Handle registration failure, display error message, etc.
@@ -56,7 +58,7 @@ const Attendance = () => {
 
     return (
         <div className='wrapper'>
-            <h2>Registration</h2>
+            <h2>Attendance</h2>
             <form onSubmit={handleSubmit}>
                 <div className="input-box">
                     <input type="email" placeholder='Email Address' name="email" value={email} onChange={handleChange} required />
@@ -74,9 +76,8 @@ const Attendance = () => {
                     <input type="number" placeholder='Classes Attended' name="classesAttended" value={classesAttended} onChange={handleChange} />
                     <FaLock className='icon' />
                 </div>
+                <button type="submit">Submit</button>
             </form>
-            <button type="submit">submit</button>
-
         </div>
     );
 };
