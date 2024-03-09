@@ -10,6 +10,7 @@ import FeeDetails from './components/FeeDetails/FeeDetails';
 import Student from './components/Student/Student';
 import ExamForm from './components/Examination/ExamForm';
 import Academics from './components/Academics/Academics';
+import Attendance from './components/Attendance/Attendance';
 
 
 
@@ -35,6 +36,7 @@ const AppRoutes = () => {
         <Route path="/fees" element={<FeeDetails />} />
         <Route path="/examination" element={<ExamForm />} />
         <Route path='/register' element={<RegisterForm />} />
+        <Route path='/attendance' element={<Attendance />} />
       </Routes>
     </Router>
   );

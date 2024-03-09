@@ -1,59 +1,55 @@
-.container {
+.big-wrapper {
+  width: 75vw/*calc(100% - 300px)*/;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  min-height: 85vh;
-}
-
-.header,
-.footer {
-  background: Transparent;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);  padding: 1rem;
-  position: fixed;
-  left: 0;
-  right: 0;
-}
-
-.header {
-  top: 0;
-}
-
-.footer {
-  bottom: 0;
-}
-
-.content{
-  width: 400px;
-  max-height: 70vh;
-  background: Transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);
-  color: #fff;
-  border-radius: 10px;
-  padding: 15px 25px;
-  margin-top: 150px;
-}
-.notice{
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);  padding: 1rem;
-  position: fixed;
-  left: 0;
-  width: 200px;
-  margin-top: 150px;
-}
-.stuff {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(50px);  padding: 1rem;
-  position: fixed;
-  right: 0;
-  width: 200px;
-  margin-top: 150px;
-}
-.notice,
-.content,
-.stuff {
+  border-left: 0px;
+  backdrop-filter: blur(50px);  
   padding: 1rem;
+  margin-left: 25vw; 
+}
+
+.small-wrapper {
   text-align: center;
+  max-width: 25%;
+  width: calc(25% - 0.5rem);
+  max-height: 50%;
+  margin: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);  
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+a {
+  color: #fffa;
+  text-decoration: none;
+}
+
+.small-wrapper :hover {
+  color: rgba(0, 255, 115, 0.9);
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .big-wrapper {
+    width: 100vw;
+    margin-left: 0px;
+    margin-top: 101px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+    border-left-width: 2px;
+    border-top: 0px;
+  }
+
+  .small-wrapper {
+    width: calc(50% - 0.5rem);
+    max-width: 50%;
+  }
 }
