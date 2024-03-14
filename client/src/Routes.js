@@ -6,6 +6,7 @@ import Startpage from './components/startpage/startpage';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard';
+import Settings from './components/Settings/Settings';
 import FeeDetails from './components/FeeDetails/FeeDetails';
 import Student from './components/Student/Student';
 import ExamForm from './components/Examination/ExamForm';
@@ -31,6 +32,7 @@ const AppRoutes = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/startpage" element={<Startpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/settings' element={<Settings />} />
         <Route path='/academics' element={<Academics />} />
         <Route path="/student" element={<Student />} />
         <Route path="/fees" element={<FeeDetails />} />
