@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaLock, FaEnvelope, FaAt } from "react-icons/fa";
+// import { FaLock, FaEnvelope, FaAt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'; // Add this import
 
 const Attendance = () => {
@@ -27,7 +27,7 @@ const Attendance = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/attendance', {
+            const response = await fetch('https://edconnect-nine.vercel.app/api/auth/attendance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,19 +62,19 @@ const Attendance = () => {
             <form onSubmit={handleSubmit}>
                 <div className="input-box">
                     <input type="email" placeholder='Email Address' name="E-Mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    <FaEnvelope className='icon' />
+                    {/* <FaEnvelope className='icon' /> */}
                 </div>
                 <div className="input-box">
                     <input type="text" placeholder='Username' name="Username" value={username} onChange={(e) => setUsername(e.target.value)} required minLength={8} />
-                    <FaAt className='icon' />
+                    {/* <FaAt className='icon' /> */}
                 </div>
                 <div className="input-box">
                     <input type="number" placeholder='Total Classes' name="Total Classes" value={totalClasses} onChange={(e) => setTotalClasses(e.target.value)} />
-                    <FaLock className='icon' />
+                    {/* <FaLock className='icon' /> */}
                 </div>
                 <div className="input-box">
                     <input type="number" placeholder='Classes Attended' name="Classes Attended" value={classesAttended} onChange={(e) => setClassesAttended(e.target.value)} />
-                    <FaLock className='icon' />
+                    {/* <FaLock className='icon' /> */}
                 </div>
                 <button type="submit">Submit</button>
             </form>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { FaUserAlt, FaLock, FaEnvelope,  FaCalendar, FaAt } from "react-icons/fa"
+// import { FaUserAlt, FaLock, FaEnvelope,  FaCalendar, FaAt } from "react-icons/fa"
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ const RegisterForm = () => {
     }
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch('https://edconnect-nine.vercel.app/api/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -67,23 +67,23 @@ const RegisterForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="input-box">
           <input type="email" placeholder='Email Address' name="email" value={email} onChange={handleChange} required />
-          <FaEnvelope className='icon' />
+          {/* <FaEnvelope className='icon' /> */}
         </div>
         <div className="input-box">
           <input type="text" placeholder='Username' name="username" value={username} onChange={handleChange} required minLength={8} />
-          <FaAt className='icon' />
+          {/* <FaAt className='icon' /> */}
         </div>
         <div className="input-box">
           <input type="password" placeholder='Password' name="password" value={password} onChange={handleChange} required minLength={12} />
-          <FaLock className='icon' />
+          {/* <FaLock className='icon' /> */}
         </div>
         <div className="input-box">
           <input type="password" placeholder=' Confirm Password' name="confirmPassword" value={confirmPassword} onChange={handleChange} required minLength={12} />
-          <FaLock className='icon' />
+          {/* <FaLock className='icon' /> */}
         </div>
         <div className="input-box">
           <input type="date" name="dateOfBirth" value={dateOfBirth} onChange={handleChange} required />
-          <FaCalendar className='icon' />
+          {/* <FaCalendar className='icon' /> */}
         </div>
         <div className='select-box'>
           <select name="role" value={role} onChange={handleChange} required>
