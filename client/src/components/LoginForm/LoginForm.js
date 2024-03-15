@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css'
-import { FaLock, FaAt } from "react-icons/fa";
+// import { FaLock, FaAt } from "react-icons/fa";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://edconnect-nine.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,11 +52,11 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <div className='input-box'>
           <input type="email" name="email" value={email} onChange={handleChange} placeholder="Email" required />
-          <FaAt className='icon'/>
+          {/* <FaAt className='icon'/> */}
         </div>
         <div className='input-box'>
           <input type="password" name="password" value={password} onChange={handleChange} placeholder="Password" required />
-          <FaLock className='icon'/>
+          {/* <FaLock className='icon'/> */}
         </div>
         <button type="submit">Login</button>
       </form>
