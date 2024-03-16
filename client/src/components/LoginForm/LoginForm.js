@@ -23,6 +23,9 @@ const LoginForm = () => {
       const response = await fetch('https://edconnect-nine.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
+          'Access-Control-Allow-Origin': '*',
+                  'Access-Control-Allow-Headers': '*',
+                  'Access-Control-Allow-Credentials': 'true',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
