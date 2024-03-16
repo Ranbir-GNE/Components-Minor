@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import { FaUserAlt, FaLock, FaEnvelope,  FaCalendar, FaAt } from "react-icons/fa"
+
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
