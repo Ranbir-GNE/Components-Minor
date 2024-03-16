@@ -35,7 +35,7 @@ function Sidebar() {
     <div className='sidebar'>
       <ul>
         <li>
-          <Link to="https://edconnect-dashboard.vercel.app/">Dashboard</Link>
+          <Link to="https://edconnect-dashboard-blond.vercel.app/">Dashboard</Link>
         </li>
         {dropdownItems.map((item, index) => (
           <li key={index}>
