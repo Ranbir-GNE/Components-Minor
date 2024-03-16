@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <ul>
-        <Link to="https://edconnect-dashboard.vercel.app/">
+        <Link to="https://edconnect-dashboard-blond.vercel.app/">
           <li>Dashboard</li>
         </Link>
 
@@ -21,8 +21,8 @@ function Navbar() {
         <a href="https://curacare.vercel.app/" target="_blank" rel="noopener noreferrer">
           <li>Online Session </li>
         </a>
-        <Link to="#">
-          <li>Chat</li>
+        <Link to="https://chat-psi-jet.vercel.app/">
+          <li>Chat-App</li>
         </Link>
 
         {/* <Link to="/academics">
