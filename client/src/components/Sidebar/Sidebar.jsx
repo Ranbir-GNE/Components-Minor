@@ -65,6 +65,11 @@ function Sidebar() {
             Online Session
           </a>
         </li>
+        <li>
+          <a href="https://chat-psi-jet.vercel.app/" target="_blank" rel="noopener noreferrer">
+            Chat-App
+          </a>
+        </li>
         {/* <li>
           <Link to="/change-password">Change Password</Link>
         </li> */}
