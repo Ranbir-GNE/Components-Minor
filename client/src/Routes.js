@@ -23,9 +23,9 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={
           <>
-            {/* <Navbar /> */}
+            <Navbar />
             <Startpage />
-            {/* <Sidebar /> */}
+            <Sidebar />
           </>
         } />
         {/* <Route path="/register" element={<RegisterForm />} /> */}
