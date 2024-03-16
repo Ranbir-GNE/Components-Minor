@@ -31,39 +31,42 @@ const RegisterForm = () => {
       return;
     }
 
-  try {
-    const response = await fetch('https://edconnect-nine.vercel.app/api/auth/register', {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'Access-Control-Allow-Credentials': 'true',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        confirmPassword,
-        role,
-        dateOfBirth
-      }),
-    });
+    try {
+      const response = await fetch('https://edconnect-nine.vercel.app/api/auth/register', {
+        method: 'POST',
+        headers: {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Credentials': 'true',
+            'Content-Type': 'application/json',
+          },
+          
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+          confirmPassword,
+          role,
+          dateOfBirth
+        }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.ok) {
-      console.log("Registration successful", data);
-      // Redirect or handle successful registration
-      <Navigate to='/login' replace={true} />
-    } else {
-      console.error("Registration failed", data);
-      // Handle registration failure, display error message, etc.
+      if (response.ok) {
+        console.log("Registration successful", data);
+        // Redirect to login page
+        history.push('/login');
+      } else {
+        console.error("Registration failed", data);
+        // Handle registration failure, display error message, etc.
+      }
+    } catch (error) {
+      console.error("Registration error", error);
     }
-  } catch (error) {
-    console.error("Registration error", error);
-  }
-};
+  };
   return (
     <div className='wrapper'>
       <h2>Registration</h2>
