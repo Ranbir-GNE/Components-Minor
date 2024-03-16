@@ -14,9 +14,10 @@ function Sidebar() {
     {
       title: 'Academics',
       links: [
-        { title: 'Assignments', path: '' },
+        { title: 'Assignments', path: 'https://assignment-gamma-bay.vercel.app/' },
         { title: 'Result', path: '' },
         { title: 'Attendance', path: '/attendance' },
+        { title: 'Admit Card', path: 'https://admitcard-edconnect.vercel.app/'}
       ],
     },
     // {
@@ -60,7 +61,7 @@ function Sidebar() {
           <Link to="/student">My Account</Link>
         </li>
         <li>
-          <a href="https://curacare.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <a href="https://edconnect-meeting.vercel.app/" target="_blank" rel="noopener noreferrer">
             Online Session
           </a>
         </li>
