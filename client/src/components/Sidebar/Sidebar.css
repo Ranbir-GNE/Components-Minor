@@ -15,6 +15,11 @@
   padding: 0;
 }
 
+.sidebar > ul > li >li > a {
+  text-decoration: none;
+  color: #fffa;
+}
+
 .sidebar > ul > li {
   margin-bottom: 10px;
   font-size: 20px;
@@ -64,6 +69,7 @@
 
 .sidebar ul.dropdown li {
   margin-bottom: 5px;
+  color:#fff;
 }
 
 .sidebar ul.dropdown li a {
@@ -72,6 +78,21 @@
 
 .sidebar > ul > li:hover .dropdown {
   display: block;
+}
+.sidebar-item{
+  color: #fffa;
+  text-decoration: none;
+
+}
+
+.dropdown-menu a{
+  color: #fffa;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+    text-decoration: none;
+  
 }
 
 @media (max-width: 768px) {

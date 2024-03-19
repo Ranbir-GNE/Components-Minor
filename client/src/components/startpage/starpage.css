@@ -12,3 +12,6 @@
 .register-link a:hover {
     text-decoration: underline;
 }
+.register-link button{
+    margin-top: 10px;
+}

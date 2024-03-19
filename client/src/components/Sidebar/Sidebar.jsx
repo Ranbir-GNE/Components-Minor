@@ -15,8 +15,8 @@ function Sidebar() {
       title: 'Academics',
       links: [
         { title: 'Assignments', path: 'https://assignments-edconnect.vercel.app/' },
-        { title: 'Result', path: '' },
-        { title: 'Attendance', path: '/attendance' },
+        // { title: 'Result', path: '' },
+        // { title: 'Attendance', path: '/attendance' },
         { title: 'Admit Card', path: 'https://admitcard-edconnect.vercel.app/'}
       ],
     },
