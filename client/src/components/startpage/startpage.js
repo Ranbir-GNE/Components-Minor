@@ -1,9 +1,4 @@
 import React from 'react';
-import axios from 'axios'
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar.jsx';
-import Sidebar from '../Sidebar/Sidebar.jsx';
 import LoginForm from '../LoginForm/LoginForm.js';// Dashboard.js
 import './startpage.css';
 import RegisterForm from '../RegisterForm/RegisterForm.js';
