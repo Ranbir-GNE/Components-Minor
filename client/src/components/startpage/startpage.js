@@ -1,16 +1,22 @@
 import React from 'react';
+import axios from 'axios'
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.jsx';
 import Sidebar from '../Sidebar/Sidebar.jsx';
-// Dashboard.js
+import LoginForm from '../LoginForm/LoginForm.js';// Dashboard.js
+import './startpage.css';
+import RegisterForm from '../RegisterForm/RegisterForm.js';
 
 const Startpage = () => {
   return (
     <div>
-      <div>
-        <h2></h2>
-        <div className="wrapper">
-        <div>
+      <div className='title'>
+        <h1>Guru Nanak Dev Engineering, Gill, Ludhiana</h1>
+        <p></p>
+      </div>
+       <div className='contents'>
+      <div className="wrapper">
           <h1>About Us</h1>
           <p>Welcome to our college. We are a prestigious institution offering a variety of courses for our students.</p>
           <h2>Our Mission</h2>
@@ -21,20 +27,13 @@ const Startpage = () => {
           <p>Address: 123 College Street, City, State, Country</p>
           <p>Email: info@college.edu</p>
           <p>Phone: 123-456-7890</p>
-        </div>
-        <div className='register-link'></div>
-        <Link to="/login">
-          <button>Login</button>
-        </Link>
-        <Link to="/register">
-          <button>Register</button>
-        </Link>
-        </div>
-
-        <Navbar /> {/* Render the Navbar component here */}
-        <Sidebar/>
       </div>
+        <LoginForm />
+        <RegisterForm />
+      </div>
+
     </div>
+   
   );
 };
 

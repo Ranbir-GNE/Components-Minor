@@ -7,7 +7,7 @@ const FeeDetails = () => {
     return (
         <div>
             <Navbar />
-            <Sidebar />
+            {/* <Sidebar /> */}
         <div className="fee-wrapper">
             <div className="student-details">
                 <h2>Student Details</h2>

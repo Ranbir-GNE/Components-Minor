@@ -16,7 +16,7 @@ const Student = () => {
   return (
     <div>
       <Navbar />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="student-wrapper">
         <div className="profile-picture">
           {/* Add student profile picture here */}

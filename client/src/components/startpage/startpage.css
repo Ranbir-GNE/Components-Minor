@@ -1,0 +1,41 @@
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrapper {
+    max-width: 600px;
+    width: 700px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .wrapper h1,
+  .wrapper h2,
+  .wrapper p {
+    margin: 20px 0;
+}
+  .title{
+    width: 70vw;
+    min-height: max-content;
+    margin: 20px ;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 14px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;        
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles for the wrapper heading */
+.title h1 {
+    font-size: 30px;
+    text-align: center;
+}

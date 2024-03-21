@@ -62,7 +62,7 @@ return (
         </div>
         
         <Navbar />
-        <Sidebar />
+        {/* <Sidebar /> */}
     </div>
 );
 };

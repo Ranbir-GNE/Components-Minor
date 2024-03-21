@@ -13,11 +13,13 @@
 .sidebar > ul {
   list-style-type: none;
   padding: 0;
+
 }
 
 .sidebar > ul > li >li > a {
   text-decoration: none;
   color: #fffa;
+  
 }
 
 .sidebar > ul > li {
@@ -26,15 +28,17 @@
   font-weight: bold;
   padding-block: 18px;
   position: relative;
+  
 }
 
 .sidebar > ul > li > a {
   text-decoration: none;
   color: #fffa;
+  
 }
 
 .sidebar > ul > li > a:hover {
-  color: #047dffa4;
+  color: rgba(0, 255, 115, 0.9);
   transform: scale3d(1.1, 1.1, 1.1);
   transition: 0.3s ease-in-out;
 }
@@ -53,6 +57,7 @@
 .sidebar .active {
   font-weight: 700;
   font-size: 20px;
+  
 }
 
 /* Dropdown Styles */
@@ -82,17 +87,21 @@
 .sidebar-item{
   color: #fffa;
   text-decoration: none;
-
 }
-
+.sidebar-item :hover{
+  color: rgba(0, 255, 115, 0.9);
+  transition: 0.3s ease-in-out;
+  
+}
 .dropdown-menu a{
   color: #fffa;
   text-decoration: none;
+  
 }
 
 .dropdown-menu {
     text-decoration: none;
-  
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {

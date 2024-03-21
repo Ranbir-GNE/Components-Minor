@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import '../LoginForm/LoginForm.css';
 // import { FaUserAlt, FaLock, FaEnvelope,  FaCalendar, FaAt } from "react-icons/fa"
 
 const RegisterForm = () => {
@@ -95,13 +96,10 @@ const RegisterForm = () => {
             <option value="faculty">Faculty</option>
             <option value="admin">Admin</option>
           </select>
-          <button type="submit">Register</button>
         </div>
+        <button type="submit">Register</button>
 
       </form>
-      <div className='register-link'>
-        <p>Already have an account? <Link to="/login">Login</Link></p>
-      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 /* Styles for the wrapper container */
 .wrapper {
     width: 400px;
-    min-height: max-content;
+    min-height: 700px;
     margin: 20px ;
     padding: 20px;
     background: #f8f8f8;
@@ -31,9 +31,10 @@
 
 /* Styles for the select box */
 .select-box {
-    margin: 10px 0;
+    margin: 20px 0;
     width: 100%;
 }
+
 
 .select-box label {
     margin-right: 20px; /* Adjust the value as needed */

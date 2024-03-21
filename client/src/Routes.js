@@ -21,24 +21,19 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <Startpage />
-            <Sidebar />
-          </>
-        } />
+        <Route path="/" element={<Startpage />} />
         {/* <Route path="/register" element={<RegisterForm />} /> */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/startpage" element={<Startpage />} />
-        <Route path="/dashboard" element={<a href="https://edconnect-dashboard.vercel.app/">Dashboard</a>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
         <Route path='/settings' element={<Settings />} />
         <Route path='/academics' element={<Academics />} />
         <Route path="/student" element={<Student />} />
         <Route path="/fees" element={<FeeDetails />} />
         <Route path="/examination" element={<ExamForm />} />
         <Route path='/register' element={<RegisterForm />} />
-        <Route path="/attendance" element={<Attendance />} />      </Routes>
+        <Route path="/attendance" element={<Attendance />} />      
+      </Routes>
     </Router>
   );
 };

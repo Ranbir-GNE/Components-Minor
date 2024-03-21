@@ -18,7 +18,7 @@ const Dashboard = () => {
         <div className="dashboard-block">Petitions and decisions</div>
       </div>
 		<Navbar />
-		<Sidebar />
+		{/* <Sidebar /> */}
 	</div>
   );
 };

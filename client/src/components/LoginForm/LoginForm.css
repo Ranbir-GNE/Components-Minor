@@ -1,7 +1,6 @@
 /* Styles for the login page container */
 .login-page {
     width: 400px;
-    margin: 0 auto;
 }
 
 /* CSS for screens less than 600px wide */
@@ -14,14 +13,12 @@
 
 /* Styles for the wrapper container */
 .wrapper {
-    max-width: 400px;
-    max-height: 90vh;
-    background: Transparent;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(50px);
-    color: #fff;
-    border-radius: 10px;
-    padding: 15px 25px;
+    width: 400px;
+    min-height: 700px;
+    margin: 20px ;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 5px;
 }
 
 /* Styles for the wrapper heading */
@@ -113,6 +110,7 @@
     font-size: 16px;
     color: #333;
     font-weight: 700;
+    margin-top: 15px;
 }
 
 /* Styles for the button on hover */
@@ -145,3 +143,9 @@
 .register-link p a:hover {
     text-decoration: underline;
 }
+.container{
+    margin-top: 50%;
+    justify-content: center;
+}
+
+
