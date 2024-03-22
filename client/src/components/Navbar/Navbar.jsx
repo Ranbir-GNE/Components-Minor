@@ -17,9 +17,6 @@ function Navbar() {
         <Link to="https://event-calender-edconnect.vercel.app/">
           <li>Event Calender</li>
         </Link>
-        <Link to="/student">
-          <li>My Account</li>
-        </Link>
         
         <a href="https://edconnect-meeting.vercel.app/" target="_blank" rel="noopener noreferrer">
           <li>Online Session </li>
