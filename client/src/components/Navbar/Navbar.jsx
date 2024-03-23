@@ -10,10 +10,6 @@ function Navbar() {
           <li>Dashboard</li>
         </Link>
 
-        <Link to="https://ed-connect.vercel.app">
-          <li>College Portal</li>
-        </Link>
-
         <Link to="https://event-calender-edconnect.vercel.app/">
           <li>Event Calender</li>
         </Link>
@@ -28,10 +24,6 @@ function Navbar() {
           <li>My Account</li>
         </Link>
         
-        <a href="https://edconnect-meeting.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <li>Online Session </li>
-        </a>
-
         {/* <Link to="/examination">
           <li>Examinations</li>
         </Link>
@@ -39,10 +31,6 @@ function Navbar() {
         <Link to="/attendance">
           <li>Attendance</li>
         </Link> */}
-
-        <a href="https://curacare.vercel.app/" target="_blank" rel="noopener noreferrer">
-          <li>Communicate</li>
-        </a>
 
         <Link to="https://ed-connect.vercel.app/settings">
           <li>Settings</li>
