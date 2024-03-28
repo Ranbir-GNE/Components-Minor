@@ -1,107 +1,67 @@
-import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import '../LoginForm/LoginForm.css';
-// import { FaUserAlt, FaLock, FaEnvelope,  FaCalendar, FaAt } from "react-icons/fa"
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
-const RegisterForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    role: 'student',
-    dateOfBirth: ''
-  });
+function App() {
 
-  const { username, email, password, confirmPassword, role, dateOfBirth } = formData;
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+	async function registerUser(event) {
+		event.preventDefault()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+		const response = await fetch('https://edconnect-nine.vercel.app/api/register', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				name,
+				email,
+				password,
+			}),
+		})
 
-    if (password !== confirmPassword) {
-      console.error("Passwords do not match");
-      return;
-    }
+		const data = await response.json()
+        console.log(data)
 
-    if (!dateOfBirth) {
-      console.error("Date of birth is required");
-      return;
-    }
+		if (data.status === 'ok') {
+			<Navigate to='/login' replace={true} />
+		}
+	}
 
-  try {
-    const response = await fetch('https://edconnect-nine.vercel.app/api/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-                  'Access-Control-Allow-Headers': '*',
-                  'Access-Control-Allow-Credentials': 'true'
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        confirmPassword,
-        role,
-        dateOfBirth
-      }),
-    });
+	return (
+		<div className='wrapper'>
+			<h1>Register</h1>
+			<form onSubmit={registerUser}>
+			<div className="input-box">
+				<input
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+					type="text"
+					placeholder="Name"
+				/>
+				</div>
+				<div className="input-box">
+				<input
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					type="email"
+					placeholder="Email"
+				/>
+				</div>
+				<div className="input-box">
+				<input
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					type="password"
+					placeholder="Password"
+				/>
+				</div>
+				<button type="submit">Register</button>
+			</form>
+		</div>
+	)
+}
 
-    const data = await response.json();
-
-    if (response.ok) {
-      console.log("Registration successful", data);
-      // Redirect or handle successful registration
-      <Navigate to='/login' replace={true} />
-    } else {
-      console.error("Registration failed", data);
-      // Handle registration failure, display error message, etc.
-    }
-  } catch (error) {
-    console.error("Registration error", error);
-  }
-};
-  return (
-    <div className='wrapper'>
-      <h2>Registration</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="input-box">
-          <input type="email" placeholder='Email Address' name="email" value={email} onChange={handleChange} required />
-          {/* <FaEnvelope className='icon' /> */}
-        </div>
-        <div className="input-box">
-          <input type="text" placeholder='Username' name="username" value={username} onChange={handleChange} required minLength={8} />
-          {/* <FaAt className='icon' /> */}
-        </div>
-        <div className="input-box">
-          <input type="password" placeholder='Password' name="password" value={password} onChange={handleChange} required minLength={12} />
-          {/* <FaLock className='icon' /> */}
-        </div>
-        <div className="input-box">
-          <input type="password" placeholder=' Confirm Password' name="confirmPassword" value={confirmPassword} onChange={handleChange} required minLength={12} />
-          {/* <FaLock className='icon' /> */}
-        </div>
-        <div className="input-box">
-          <input type="date" name="dateOfBirth" value={dateOfBirth} onChange={handleChange} required />
-          {/* <FaCalendar className='icon' /> */}
-        </div>
-        <div className='select-box'>
-          <select name="role" value={role} onChange={handleChange} required>
-            <option value="">Select Role</option>
-            <option value="student">Student</option>
-            <option value="faculty">Faculty</option>
-            <option value="admin">Admin</option>
-          </select>
-        </div>
-        <button type="submit">Register</button>
-
-      </form>
-    </div>
-  );
-};
-
-export default RegisterForm;
+export default App
