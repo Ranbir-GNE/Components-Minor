@@ -39,7 +39,10 @@ const User = require('./models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-app.use(cors())
+app.use(cors({
+	origin: 'https://edconnect-nine.vercel.app/'
+  }))
+  app.use(express.json())
 app.use(express.json())
 
 mongoose.connect('mongodb+srv://gundeepsinghm:collegepassword@cluster0.rnnuthn.mongodb.net/?retryWrites=true&w=majority')
