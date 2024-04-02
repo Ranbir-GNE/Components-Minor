@@ -10,7 +10,7 @@ function App() {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('https://edconnect-nine.vercel.app/api/register', {
+		const response = await fetch('http://localhost:5000/api/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

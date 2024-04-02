@@ -89,65 +89,64 @@
 
 // export default LoginForm;
 
-
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-	async function loginUser(event) {
-		event.preventDefault()
+    async function loginUser(event) {
+        event.preventDefault();
 
-		const response = await fetch('https://edconnect-nine.vercel.app/api/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				email,
-				password,
-			}),
-		})
+        const response = await fetch('http://localhost:5000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email,
+                password,
+            }),
+        });
 
-		const data = await response.json()
-    console.log(data)
+        const data = await response.json();
+        console.log(data);
 
-		if (data.user) {
-			// localStorage.setItem('token', data.user)
-			alert('Login successful')
-			window.location.href = '/dashboard'
-		} else {
-			alert('Please check your username and password')
-		}
-	}
+        if (data.user) {
+            const userId = data.user;
+            alert('Login successful');
+            window.location.href = `https://edconnect-dashboard-blond.vercel.app`;
+        } else {
+            alert('Please check your username and password');
+        }
+    }
 
-	return (
-		<div className="wrapper">
-			<div className="container">
-			<h1>Login</h1>
-			<form onSubmit={loginUser}>
-			<div className="input-box">
-				<input
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					type="email"
-					placeholder="Email"
-				/>
-			</div>
-			<div className="input-box">
-				<input
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					type="password"
-					placeholder="Password"
-				/>
-			</div>
-			<button type="submit">Login</button>
-			</form>
-			</div>
-		</div>
-	)
+    return (
+        <div className="wrapper">
+            <div className="container">
+                <h1>Login</h1>
+                <form onSubmit={loginUser}>
+                    <div className="input-box">
+                        <input
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="email"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="input-box">
+                        <input
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    );
 }
 
-export default App
+export default App;

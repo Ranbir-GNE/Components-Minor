@@ -39,9 +39,7 @@ const User = require('./models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-app.use(cors({
-	origin: 'https://edconnect-nine.vercel.app/'
-  }))
+app.use(cors())
   app.use(express.json())
 app.use(express.json())
 
@@ -85,7 +83,7 @@ app.post('/api/login', async (req, res) => {
 			'secret123'
 		)
 
-		return res.json({ status: 'ok', user: token })
+		return res.json({ status: 'ok', user: user._id })
 	} else {
 		return res.json({ status: 'error', user: false })
 	}
