@@ -39,7 +39,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 // Allow requests from your frontend domain
-const allowedOrigins = ['https://edconnect-dashboard-blond.vercel.app/'];
+const allowedOrigins = ['https://ed-connect.vercel.app/'];
 app.use(cors({
   origin: allowedOrigins,
   credentials: true,
