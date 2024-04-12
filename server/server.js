@@ -31,21 +31,21 @@
 // app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
-const express = require('express')
-const app = express()
-const cors = require('cors')
+const express = require('express');
+const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
-const User = require('./models/user')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
+const User = require('./models/user');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
-app.use(cors(
-	// origin: 'https://edconnect-nine.vercel.app/'
-  ))
-  app.use(express.json())
-app.use(express.json())
+app.use(cors({
+  origin: 'https://ed-connect.vercel.app/',
+  credentials: true,
+}));
+app.use(express.json());
 
-mongoose.connect('mongodb+srv://gundeepsinghm:collegepassword@cluster0.rnnuthn.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://gundeepsinghm:collegepassword@cluster0.rnnuthn.mongodb.net/?retryWrites=true&w=majority');
 
 app.post('/api/register', async (req, res) => {
 	console.log(req.body)
