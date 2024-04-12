@@ -99,7 +99,10 @@ function App() {
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('https://edconnect-nine.vercel.app/api/login', {
+		// const response = await fetch('https://edconnect-nine.vercel.app/api/login', 
+		const response = await fetch('http://localhost:5000/api/login', 
+
+		{
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -144,6 +147,7 @@ function App() {
 				/>
 			</div>
 			<button type="submit">Login</button>
+
 			</form>
 			</div>
 		</div>

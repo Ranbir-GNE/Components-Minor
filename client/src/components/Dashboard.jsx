@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Correct import for Link
+
 import Navbar from './Navbar/Navbar.jsx';
 import Sidebar from './Sidebar/Sidebar.jsx';
 import './Dashboard.css';
@@ -18,8 +20,10 @@ const Dashboard = () => {
         <div className="dashboard-block">Petitions and decisions</div>
       </div>
 		<Navbar />
-		{/* <Sidebar /> */}
-	</div>
+    <Link to={"/student"} className="backButton">
+        student
+      </Link>	
+    </div>
   );
 };
 
