@@ -38,12 +38,11 @@ const User = require('./models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-// Allow requests from your frontend domain
-const allowedOrigins = ['https://ed-connect.vercel.app/'];
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
-}));
+// Define allowed origins
+const allowedOrigins = [
+  'https://edconnect-dashboard-blond.vercel.app',
+  'https://ed-connect.vercel.app'
+];
 
 app.use(express.json());
 
@@ -64,7 +63,21 @@ app.post('/api/register', async (req, res) => {
   }
 })
 
-app.post('/api/login', async (req, res) => {
+// Custom CORS middleware for specific routes
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.options('/api/login', cors(corsOptions)); // Pre-flight OPTIONS request
+
+app.post('/api/login', cors(corsOptions), async (req, res) => {
   const user = await User.findOne({
     email: req.body.email,
   })
