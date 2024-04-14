@@ -3,7 +3,7 @@ import React from 'react';
 import AppRoutes from './Routes';
 
 
-function App() {
+function App() { 
   return (
     <div className="App">
       <AppRoutes />
