@@ -12,6 +12,7 @@ function App() {
 
 		const response = await fetch('https://components-minor.onrender.com/api/register', {
 			method: 'POST',
+			credentials: "include", // Include if you're using cookies or sessions
 			headers: {
 				'Content-Type': 'application/json',
 			},
