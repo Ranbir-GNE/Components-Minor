@@ -33,7 +33,7 @@ const RegisterForm = () => {
     }
 
   try {
-    const response = await fetch('https://edconnect-nine.vercel.app/api/auth/register', {
+    const response = await fetch('https://components-minor.onrender.com/api/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

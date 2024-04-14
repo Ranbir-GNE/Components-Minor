@@ -7,7 +7,7 @@ const Startpage = () => {
   return (
     <div>
       <div className='title'>
-        <h1>Guru Nanak Dev Engineering, Gill, Ludhiana</h1>
+        <h1>Ed-Connect</h1>
         <p></p>
       </div>
        <div className='contents'>
