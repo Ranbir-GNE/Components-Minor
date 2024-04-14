@@ -5,12 +5,12 @@
   }
   
   .wrapper {
-    max-width: 600px;
-    width: 700px;
+    width: 400px;
+    height:700px;
     margin: 20px;
-    text-align: center;
+    justify-content: center;
   }
-  
+
   .wrapper h1,
   .wrapper h2,
   .wrapper p {

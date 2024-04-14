@@ -14,7 +14,7 @@
 /* Styles for the wrapper container */
 .wrapper {
     width: 400px;
-    min-height: 700px;
+    height: 700px;
     margin: 20px ;
     padding: 20px;
     background: #f8f8f8;
