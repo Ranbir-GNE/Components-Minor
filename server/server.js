@@ -1,35 +1,3 @@
-// const express = require('express');
-// const cors = require('cors');
-// const mongoose = require('mongoose');
-// require('dotenv').config();
-
-// const app = express();
-// const PORT = process.env.PORT || 5000;
-
-// // Apply cors middleware
-// app.use(cors(
-//   {
-//     origin: "*",
-//     methods: ["POST", "GET"],
-//     credentials: true
-// }
-// ));
-
-// // Parse JSON request body
-// app.use(express.json());
-
-// // Connect to MongoDB
-// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('MongoDB connected'))
-//   .catch(err => console.error(err));
-
-// // Routes
-// const authRoutes = require('./routes/auth');
-// app.use('/api/auth', authRoutes);
-
-// // Start the server
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -38,18 +6,34 @@ const User = require('./models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-// Define allowed origins
 const allowedOrigins = [
-  'https://edconnect-dashboard-blond.vercel.app',
-  'https://ed-connect.vercel.app'
+  'https://ed-connect.vercel.app',
+  'http://localhost:3000'
 ];
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://gundeepsinghm:collegepassword@cluster0.rnnuthn.mongodb.net/?retryWrites=true&w=majority');
+// CORS middleware
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.options('*', cors(corsOptions)); // Pre-flight OPTIONS request
+app.use(cors(corsOptions));
+
+mongoose.connect('mongodb+srv://gundeepsinghm:collegepassword@cluster0.rnnuthn.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 app.post('/api/register', async (req, res) => {
-  console.log(req.body)
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10)
     await User.create({
@@ -63,21 +47,7 @@ app.post('/api/register', async (req, res) => {
   }
 })
 
-// Custom CORS middleware for specific routes
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-};
-
-app.options('/api/login', cors(corsOptions)); // Pre-flight OPTIONS request
-
-app.post('/api/login', cors(corsOptions), async (req, res) => {
+app.post('/api/login', async (req, res) => {
   const user = await User.findOne({
     email: req.body.email,
   })
@@ -97,7 +67,7 @@ app.post('/api/login', cors(corsOptions), async (req, res) => {
         name: user.name,
         email: user.email,
       },
-      'secret123'
+      'secret_key'
     )
 
     return res.json({ status: 'ok', user: token })
@@ -105,9 +75,6 @@ app.post('/api/login', cors(corsOptions), async (req, res) => {
     return res.json({ status: 'error', user: false })
   }
 })
-
-const authRoutes = require('./routes/auth');
-app.use('/api/auth', authRoutes);
 
 app.listen(5000, () => {
   console.log('Server started at 5000')
